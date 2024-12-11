@@ -104,10 +104,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>IF NOT EXIST "C:\Users\KGA\Desktop\Project\BABOisYOU\BABOisYOU\bin\Debug\map" MD "C:\Users\KGA\Desktop\Project\BABOisYOU\BABOisYOU\bin\Debug\map"
-XCOPY "C:\Users\KGA\Desktop\Project\BABOisYOU\BABOisYOU\map\*" "C:\Users\KGA\Desktop\Project\BABOisYOU\BABOisYOU\bin\Debug\map" /Y
+    <PostBuildEvent>IF NOT EXIST "$(TargetDir)map" MD "$(TargetDir)map"
+XCOPY "$(ProjectDir)map\*" "$(TargetDir)map" /Y
 
-IF NOT EXIST "C:\Users\KGA\Desktop\Project\BABOisYOU\BABOisYOU\bin\Debug\sfx" MD "C:\Users\KGA\Desktop\Project\BABOisYOU\BABOisYOU\bin\Debug\sfx"
-XCOPY "C:\Users\KGA\Desktop\Project\BABOisYOU\BABOisYOU\sfx\*" "C:\Users\KGA\Desktop\Project\BABOisYOU\BABOisYOU\bin\Debug\sfx" /Y</PostBuildEvent>
+IF NOT EXIST "$(TargetDir)sfx" MD "$(TargetDir)sfx"
+XCOPY "$(ProjectDir)sfx\*" "$(TargetDir)sfx" /Y
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
